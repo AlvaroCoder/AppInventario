@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registrar_Locales"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="67dp"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        android:layout_marginTop="10dp"
+        android:onClick="retro_loc"
+        android:layout_marginRight="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="194dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:srcCompat="@drawable/panaderialogo" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="10dp"
+        android:text="Nombre del local"
+        android:textColor="@color/label"
+        android:textSize="18dp"/>
+
+    <EditText
+        android:id="@+id/txtlocal"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_rounded_bordre"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Direccion del local"
+        android:textColor="@color/label"
+        android:textSize="18dp"
+        />
+
+    <EditText
+        android:id="@+id/txtfecha"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_rounded_bordre"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Distrito"
+        android:textColor="@color/label"
+        android:textSize="18dp"
+        />
+
+    <EditText
+        android:id="@+id/txtdistrito"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_rounded_bordre"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:text="Ciudad"
+        android:textColor="@color/label"
+        android:textSize="18dp"
+        />
+
+    <EditText
+        android:id="@+id/txtciudad"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/button_rounded_bordre"
+        android:ems="10"
+        android:inputType="text"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/btnfecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="70dp"
+        android:background="@drawable/button_rounded"
+        android:onClick="onclick"
+        android:text="Finalizar"
+        android:textSize="18dp" />
+</LinearLayout>

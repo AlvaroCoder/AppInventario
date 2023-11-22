@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Locales"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/Azul"
+        android:fontFamily="@font/rowdies_light"
+        android:text="Locales"
+        android:textAlignment="center"
+        android:textColor="@color/label"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        android:background="@drawable/button_rounded_bordre">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contenedor_locales"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/agregar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/button_rounded"
+        android:onClick="onClick"
+        android:text="Agregar"
+        android:textSize="18sp" />
+</LinearLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#CFD8DC"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:layout_marginBottom="20sp"
+        android:background="#000000"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:layout_marginBottom="5sp"
+            android:text="Bienvenido!"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10sp"
+            android:text="¿Qué deseas hacer hoy?"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ly1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0199dc"
+        android:onClick="onClick"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:background="@drawable/ingicono"
+            android:onClick="onClick" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="20sp"
+            android:fontFamily="@font/rowdies_light"
+            android:text="Registrar Insumo"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ly2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#727378"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:background="@drawable/reticono"
+            android:onClick="ingreso" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="160sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="240sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginRight="30sp"
+            android:layout_marginBottom="20sp"
+            android:fontFamily="@font/rowdies_light"
+            android:text="Ingreso o Retiro"
+            android:textAlignment="textEnd"
+            android:textColor="#FFFFFF"
+            android:textSize="38sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ly3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#00679f"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/resuicono"
+            android:onClick="visest" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="140sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20sp"
+            android:layout_marginTop="20sp"
+            android:fontFamily="@font/rowdies_light"
+            android:text="Estado Actual"
+            android:textColor="#FFFFFF"
+            android:textSize="40sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ly4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#727378"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/imageButton20"
+            android:layout_width="match_parent"
+            android:layout_height="150sp"
+            android:background="@drawable/iconomovs"
+            android:onClick="vismov" />
+
+        <TextView
+            android:id="@+id/textView200"
+            android:layout_width="220sp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="180sp"
+            android:layout_marginTop="20sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginBottom="20sp"
+            android:fontFamily="@font/rowdies_light"
+            android:text="Movimientos"
+            android:textAlignment="textEnd"
+            android:textColor="#FFFFFF"
+            android:textSize="35sp" />
+    </RelativeLayout>
+</LinearLayout>

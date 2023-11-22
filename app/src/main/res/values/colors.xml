@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!---Mis colores -->
+
+    <color name = "Azul">#00679f</color>
+    <color name = "Gris">#CFC2C2</color>
+    <color name = "Celeste">#03A9F4</color>
+    <color name = "Naranja">#FF5722</color>
+    <color name = "Rojo">#D32F2F</color>
+    <color name = "Amarillo">#FFEB3B</color>
+    <color name = "Cyan">#B2EBF2</color>
+
+    <color name="boton">#1976D2</color>
+    <color name="label">#212121</color>
+    <color name="background">#CFD8DC</color>
+    <color name="border">#009688</color>
+    <color name ="borderLocal">#0199dc</color>
+</resources>

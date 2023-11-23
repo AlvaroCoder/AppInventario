@@ -24,8 +24,8 @@ public class Adapter_Estados extends RecyclerView.Adapter<Adapter_Estados.ViewHo
         public final TextView txtmodelo1,txtmodelo2;
         public ViewHolder(@NonNull View view) {
             super(view);
-            txtmodelo1 = view.findViewById(R.id.txtfec);
-            txtmodelo2 = view.findViewById(R.id.txtproducto);
+            txtmodelo1 = view.findViewById(R.id.txtinsumofec);
+            txtmodelo2 = view.findViewById(R.id.txtproducto2);
         }
         void bindData(Estados estados){
             txtmodelo1.setText(estados.getInsumo());
@@ -45,7 +45,7 @@ public class Adapter_Estados extends RecyclerView.Adapter<Adapter_Estados.ViewHo
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Estados estados = listaestados.get(position);
         holder.txtmodelo1.setText(estados.getInsumo());
-        holder.txtmodelo2.setText(estados.getStock_actual());
+        holder.txtmodelo2.setText(String.valueOf(estados.getStock_actual()));
     }
 
     @Override

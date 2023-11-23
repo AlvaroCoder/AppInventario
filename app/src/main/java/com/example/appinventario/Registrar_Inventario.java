@@ -9,7 +9,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.appinventario.Dbhelper.db_locales;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Registrar_Inventario extends AppCompatActivity {
     private EditText reg1;
@@ -33,13 +44,54 @@ public class Registrar_Inventario extends AppCompatActivity {
         btnregistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                db_locales local=new db_locales(Registrar_Inventario.this);
-                long id=local.insertarLocales(reg1.getText().toString(),reg2.getText().toString(),reg3.getText().toString(),reg4.getText().toString());
-                if(id>0){
-                    Toast.makeText(Registrar_Inventario.this,"Registro Bueno",Toast.LENGTH_SHORT).show();
-                }else {
-                    Toast.makeText(Registrar_Inventario.this,"Error en el Registro",Toast.LENGTH_SHORT).show();
-                }
+                RequestQueue requestQueue = Volley.newRequestQueue(Registrar_Inventario.this);
+                String idLocal = getIntent().getStringExtra("idLocales");
+                String url = "https://apiappinventario.fly.dev/insumos";
+                JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, url, null,
+                        new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                System.out.println("RESPUESTA SERVIDOR = "+response);
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                }){
+                    @Override
+                    public Map<String, String> getHeaders() {
+                        Map<String, String> headers = new HashMap<>();
+                        headers.put("Content-Type", "application/json");
+                        return headers;
+                    }
+
+                    @Override
+                    public byte[] getBody() {
+                        String strNombre = reg1.getText().toString();
+                        String strMedida = reg2.getText().toString();
+                        int strStock = Integer.parseInt(reg3.getText().toString());
+                        int strStockMin = Integer.parseInt(reg4.getText().toString());
+
+                        JSONObject jsonLocal = new JSONObject();
+                        try {
+                            jsonLocal.put("idLocal", Integer.parseInt(idLocal));
+                            jsonLocal.put("Nombre",strNombre);
+                            jsonLocal.put("Medida", strMedida);
+                            jsonLocal.put("Stock", strStock);
+                            jsonLocal.put("StockMin", strStockMin);
+
+                        }catch (JSONException err){
+                            err.printStackTrace();
+                        }
+                        return  jsonLocal.toString().getBytes();
+                    }
+                };
+                requestQueue.add(jsonObjectRequest);
+
+                Intent intent = new Intent(Registrar_Inventario.this, menu_seleccionar_accion.class);
+                intent.putExtra("idLocales", idLocal);
+                startActivity(intent);
 
             }
         });

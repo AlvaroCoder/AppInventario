@@ -21,17 +21,19 @@ public class Adapter_Mov extends RecyclerView.Adapter<Adapter_Mov.ViewHolder>{
         this.context = context;
     }
     public static class ViewHolder extends RecyclerView.ViewHolder{
-        public final TextView txtfec,txtproducto,txtmov;
+        public final TextView txtfec,txtproducto,txtmov,txtCantidad;
         public ViewHolder(@NonNull View view) {
             super(view);
             txtfec = view.findViewById(R.id.txtfec);
             txtproducto = view.findViewById(R.id.txtproducto);
             txtmov = view.findViewById(R.id.txtmov);
+            txtCantidad = view.findViewById(R.id.txtCantidad);
         }
         void bindData(Movimientos movimientos){
             txtfec.setText(movimientos.getFecha());
             txtproducto.setText(movimientos.getInsumo());
             txtmov.setText(movimientos.getTipo());
+            txtCantidad.setText(String.valueOf(movimientos.getCantidad()));
         }
 
     }
@@ -49,6 +51,7 @@ public class Adapter_Mov extends RecyclerView.Adapter<Adapter_Mov.ViewHolder>{
         holder.txtfec.setText(movimientos.getFecha());
         holder.txtproducto.setText(movimientos.getInsumo());
         holder.txtmov.setText(movimientos.getTipo());
+        holder.txtCantidad.setText(String.valueOf(movimientos.getCantidad()));
     }
 
     @Override

@@ -2,13 +2,15 @@ package com.example.appinventario;
 
 public class Local {
     private String nombreLocal, direccion, distrito, ciudad;
-    public Local(String nombreLocal, String direccion, String distrito, String ciudad){
+    private int idLocal;
+    public Local(int idLocal,String nombreLocal, String direccion, String distrito, String ciudad){
+        this.idLocal = idLocal;
         this.nombreLocal = nombreLocal;
         this.direccion  = direccion;
         this.distrito = distrito;
         this.ciudad = ciudad;
     }
-
+    public int getIdLocal(){return  idLocal;}
     public String getNombreLocal() {
         return nombreLocal;
     }

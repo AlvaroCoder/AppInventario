@@ -19,7 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.appinventario.Dbhelper.ConexionSqLite;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,7 +35,7 @@ import java.util.Locale;
 public class Locales extends AppCompatActivity {
     private Button agregar;
     private List<Local> listaLocales;
-
+    private String idLocal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,17 +60,21 @@ public class Locales extends AppCompatActivity {
                                 for (int i=0; i<message.length(); i++){
                                     try {
                                         JSONObject jsonLocal = message.getJSONObject(i);
+                                        int idLocal = jsonLocal.getInt("idLocales");
                                         String nombreLocal= jsonLocal.getString("nombreLocal");
                                         String direccion = jsonLocal.getString("direccion");
                                         String distrito = jsonLocal.getString("distrito");
                                         String ciudad = jsonLocal.getString("ciudad");
 
-                                        Local nuevoLocal = new Local(nombreLocal, direccion, distrito, ciudad);
+                                        Local nuevoLocal = new Local(idLocal,nombreLocal, direccion, distrito, ciudad);
                                         listaLocales.add(nuevoLocal);
                                         AdapterLocales adapterLocales = new AdapterLocales(Locales.this, listaLocales);
+
                                         contenedorLocales.setHasFixedSize(true);
                                         contenedorLocales.setLayoutManager(new LinearLayoutManager(Locales.this));
                                         contenedorLocales.setAdapter(adapterLocales);
+
+
 
                                     }catch (JSONException err){
                                         err.printStackTrace();
@@ -99,14 +103,6 @@ public class Locales extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 
-
-
-    public void local(View view){
-        Intent pass = new Intent(getApplicationContext(), menu_seleccionar_accion.class);
-        startActivity(pass);
-    }
 }
